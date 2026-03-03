@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For You 💙</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💙</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
@@ -14,8 +15,9 @@ font-family:'Poppins',sans-serif;
 text-align:center;
 color:white;
 background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #667eea);
-background-size: 400% 400%;
-animation: gradientMove 12s ease infinite;
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+overflow-x:hidden;
 }
 
 @keyframes gradientMove{
@@ -31,7 +33,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:40px 20px;
+padding:20px;
 }
 
 button{
@@ -39,7 +41,7 @@ padding:12px 25px;
 border:none;
 border-radius:30px;
 cursor:pointer;
-font-size:18px;
+font-size:16px;
 margin:10px;
 transition:0.3s;
 }
@@ -47,10 +49,6 @@ transition:0.3s;
 #yesBtn{
 background:white;
 color:#764ba2;
-}
-
-#yesBtn:hover{
-transform:scale(1.1);
 }
 
 #noBtn{
@@ -65,6 +63,8 @@ border-radius:25px;
 border:none;
 text-align:center;
 outline:none;
+width:70%;
+max-width:250px;
 }
 
 #poemPage{
@@ -74,20 +74,18 @@ overflow-y:auto;
 }
 
 .poem-box{
-max-width:750px;
-width:90%;
-font-size:16px;
-line-height:1.9;
-background:rgba(255, 244, 214, 0.95);
-padding:40px;
+max-width:700px;
+width:95%;
+font-size:15px;
+line-height:1.8;
+background:rgba(255,244,214,0.95);
+padding:25px;
 border-radius:12px;
-box-shadow: 
-inset 0 0 25px rgba(0,0,0,0.35),
-0 20px 50px rgba(0,0,0,0.4);
+box-shadow: inset 0 0 25px rgba(0,0,0,0.35);
 font-family:'Noto Serif Tamil', serif;
 color:#3b240b;
 text-align:left;
-margin-bottom:60px;
+margin-bottom:50px;
 }
 
 .heart{
@@ -122,25 +120,23 @@ animation:explode 1s ease-out forwards;
 
 <body>
 
-<!-- 🔐 Lock Screen -->
+<!-- LOCK SCREEN -->
 <div id="lockScreen" class="section" style="display:flex;background:#111;">
 <h2>Enter Secret Code 💙</h2>
 <input type="password" id="password" placeholder="Enter password">
 <button onclick="checkPassword()">Unlock</button>
 </div>
 
-<!-- 💖 Proposal Page -->
+<!-- PROPOSAL PAGE -->
 <div id="proposalPage" class="section">
-<h1>Do You Accept Me? 💙</h1>
-<div>
+<h2>Do You Accept Me? 💙</h2>
 <button id="yesBtn" onclick="goToPoem()">Yes 💖</button>
 <button id="noBtn">No 😜</button>
 </div>
-</div>
 
-<!-- 📜 Poem Page -->
+<!-- POEM PAGE -->
 <div id="poemPage" class="section">
-<h1 style="color:#3e2a14;">முதல் கவிதை💛</h1>
+<h2 style="color:#3e2a14;">முதல் கவிதை 💛</h2>
 
 <div class="poem-box">
 அந்த பிரம்மன் உன்னை படைக்கும்போது என்ன<br>
@@ -165,14 +161,15 @@ animation:explode 1s ease-out forwards;
 உன் முகத்தை என் கைகளால் அணைத்து ரசித்து விட மாட்டேனா<br>
 என்று ஏக்கம் ஏன்?<br><br>
 
-இது தான் காதலா???💙
+இது தான் காதலா??? 💙
 </div>
 </div>
 
-<!-- 🎵 Background Music -->
-<audio id="bgMusic" loop preload="auto">
-    <source src="c:\Users\Priya Dhrashini\Downloads\mymusic1.mp3.mpeg" type="audio/mpeg">
+<!-- MUSIC -->
+<audio id="bgMusic" loop playsinline>
+<source src="song.mp3" type="audio/mpeg">
 </audio>
+
 <script>
 
 function checkPassword(){
@@ -186,31 +183,25 @@ alert("Wrong password 😜");
 }
 
 function goToPoem(){
-document.getElementById("proposalPage").style.display="none";
-document.getElementById("poemPage").style.display="flex";
 
 var music=document.getElementById("bgMusic");
 music.volume=0.7;
+music.play();   // MOBILE SAFE PLAY
 
-var playPromise = music.play();
-
-if (playPromise !== undefined) {
-    playPromise.then(_ => {
-        console.log("Music started");
-    })
-    .catch(error => {
-        console.log("Autoplay blocked");
-    });
-}
+document.getElementById("proposalPage").style.display="none";
+document.getElementById("poemPage").style.display="flex";
 
 startFireworks();
 }
 
 var noBtn=document.getElementById("noBtn");
-noBtn.addEventListener("mouseover",function(){
+noBtn.addEventListener("touchstart",moveButton);
+noBtn.addEventListener("mouseover",moveButton);
+
+function moveButton(){
 noBtn.style.top=Math.random()*window.innerHeight+"px";
 noBtn.style.left=Math.random()*window.innerWidth+"px";
-});
+}
 
 function createHeart(){
 var heart=document.createElement("div");
@@ -221,10 +212,10 @@ heart.style.fontSize=(Math.random()*20+10)+"px";
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),6000);
 }
-setInterval(createHeart,400);
+setInterval(createHeart,500);
 
 function startFireworks(){
-for(let i=0;i<40;i++){
+for(let i=0;i<30;i++){
 var fw=document.createElement("div");
 fw.classList.add("firework");
 fw.style.left=Math.random()*100+"vw";
