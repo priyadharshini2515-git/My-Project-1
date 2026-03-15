@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You 💙</title>
+<meta charset="UTF-8">
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
@@ -15,9 +14,8 @@ font-family:'Poppins',sans-serif;
 text-align:center;
 color:white;
 background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #667eea);
-background-size:400% 400%;
-animation:gradientMove 12s ease infinite;
-overflow-x:hidden;
+background-size: 400% 400%;
+animation: gradientMove 12s ease infinite;
 }
 
 @keyframes gradientMove{
@@ -33,7 +31,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:20px;
+padding:40px 20px;
 }
 
 button{
@@ -41,7 +39,7 @@ padding:12px 25px;
 border:none;
 border-radius:30px;
 cursor:pointer;
-font-size:16px;
+font-size:18px;
 margin:10px;
 transition:0.3s;
 }
@@ -49,6 +47,10 @@ transition:0.3s;
 #yesBtn{
 background:white;
 color:#764ba2;
+}
+
+#yesBtn:hover{
+transform:scale(1.1);
 }
 
 #noBtn{
@@ -63,8 +65,6 @@ border-radius:25px;
 border:none;
 text-align:center;
 outline:none;
-width:70%;
-max-width:250px;
 }
 
 #poemPage{
@@ -74,18 +74,20 @@ overflow-y:auto;
 }
 
 .poem-box{
-max-width:700px;
-width:95%;
-font-size:15px;
-line-height:1.8;
-background:rgba(255,244,214,0.95);
-padding:25px;
+max-width:750px;
+width:90%;
+font-size:16px;
+line-height:1.9;
+background:rgba(255, 244, 214, 0.95);
+padding:40px;
 border-radius:12px;
-box-shadow: inset 0 0 25px rgba(0,0,0,0.35);
+box-shadow: 
+inset 0 0 25px rgba(0,0,0,0.35),
+0 20px 50px rgba(0,0,0,0.4);
 font-family:'Noto Serif Tamil', serif;
 color:#3b240b;
 text-align:left;
-margin-bottom:50px;
+margin-bottom:60px;
 }
 
 .heart{
@@ -120,54 +122,61 @@ animation:explode 1s ease-out forwards;
 
 <body>
 
-<!-- LOCK SCREEN -->
+<!-- 🔐 Lock Screen -->
 <div id="lockScreen" class="section" style="display:flex;background:#111;">
 <h2>Enter Secret Code 💙</h2>
 <input type="password" id="password" placeholder="Enter password">
 <button onclick="checkPassword()">Unlock</button>
 </div>
 
-<!-- PROPOSAL PAGE -->
+<!-- 💖 Second Page -->
 <div id="proposalPage" class="section">
-<h2>Do You Accept Me? 💙</h2>
-<button id="yesBtn" onclick="goToPoem()">Yes 💖</button>
-<button id="noBtn">No 😜</button>
+<h1>Would you like to see something? 💙</h1>
+
+<button id="yesBtn" onclick="goToPoem()">
+Click Here ✨
+</button>
+
 </div>
 
-<!-- POEM PAGE -->
+<!-- 📜 Poem Page -->
 <div id="poemPage" class="section">
-<h2 style="color:#3e2a14;">முதல் கவிதை 💛</h2>
+<h1 style="color:#3e2a14;">என் முதல் கவிதை உனக்காக💛</h1>
 
 <div class="poem-box">
-அந்த பிரம்மன் உன்னை படைக்கும்போது என்ன<br>
-மயக்கத்தில் இருந்தானா…<br>
-இவ்வளவு அழகை ஒரே உருவத்தில்<br>
-எப்படி சேர்த்தான் அவன்.<br><br>
+கொஞ்சம் பொறாமை தான்<br>
+அந்த பிரம்மன் மீது<br>
+உன்னை படைக்கும்போது<br>
+அவன் உன்னை எவ்வளவு ரசித்திருப்பான் என்று<br>
+கொஞ்சம் பொறாமை தான்<br><br>
 
-எனக்கு ஒன்றும் புரியவில்லை<br><br>
+கொஞ்சம் ஆசை தான்<br>
+கண்களால் ரசித்த உன்னை<br>
+கைகளால் கட்டி அணைக்க<br>
+கொஞ்சம் ஆசை தான்<br><br>
 
-உன் கண்களில் என்ன மாயை உள்ளதா<br>
-ஒவ்வொரு முறையும் அதை காணும் போது<br>
-நான் ஏன் உன்னில் தொலைந்து விடுகிறேன் <br><br>
+கொஞ்சம் கோபம் தான்<br>
+எட்டி பார்த்தால் தெரியும் தூரம் இருந்தும்<br>
+உன்னை காண ஒரு வருடம் காத்த வைத்த<br>
+உன்மேல் கொஞ்சம் கோபம் தான்<br><br>
 
-ராத்திரியின் நேரத்தில்<br>
-பிரியாத நினைவாய் உன் எண்ணங்கள்<br>
-என்னை கொன்றாலும்<br>
-எனக்கு ஏன் சுகமாக இருக்கிறது<br><br>
+கொஞ்சம் விருப்பம் தான்<br>
+தினமும் உன் விழியை பார்த்து<br>
+என் பொழுதுகள் பொழுதுகள் விடிய<br>
+கொஞ்சம் விருப்பம் தான்<br><br>
 
-என் கனவுகளில் தினமும்<br>
-உன்னை ரசிக்கிறேன் ஆனாலும்,<br>
-ஒரு முறையாவது உன் அருகில் நின்று<br>
-உன் முகத்தை என் கைகளால் அணைத்து ரசித்து விட மாட்டேனா<br>
-என்று ஏக்கம் ஏன்?<br><br>
-
-இது தான் காதலா??? 💙
+கொஞ்சம் ஏக்கம் தான்<br>
+என் தலையணையின் மூலமாக<br>
+கிடைத்த உன் காதல்<br>
+உன்னிடமிருந்து கிடைக்க<br>
+ரொம்ப ஏக்கம் தான்<br><br>
 </div>
+
 </div>
 
-<!-- MUSIC -->
-<audio id="bgMusic" loop playsinline>
-<source src="mymusic1.mpeg" type="audio/mpeg">
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop preload="auto">
+<source src="c:\Users\Priya Dhrashini\Downloads\mymusic1.mp3.mpeg" type="audio/mpeg">
 </audio>
 
 <script>
@@ -183,24 +192,32 @@ alert("Wrong password 😜");
 }
 
 function goToPoem(){
+document.getElementById("proposalPage").style.display="none";
+document.getElementById("poemPage").style.display="flex";
 
 var music=document.getElementById("bgMusic");
 music.volume=0.7;
-music.play();   // MOBILE SAFE PLAY
 
-document.getElementById("proposalPage").style.display="none";
-document.getElementById("poemPage").style.display="flex";
+var playPromise = music.play();
+
+if (playPromise !== undefined) {
+playPromise.then(_ => {
+console.log("Music started");
+})
+.catch(error => {
+console.log("Autoplay blocked");
+});
+}
 
 startFireworks();
 }
 
 var noBtn=document.getElementById("noBtn");
-noBtn.addEventListener("touchstart",moveButton);
-noBtn.addEventListener("mouseover",moveButton);
-
-function moveButton(){
+if(noBtn){
+noBtn.addEventListener("mouseover",function(){
 noBtn.style.top=Math.random()*window.innerHeight+"px";
 noBtn.style.left=Math.random()*window.innerWidth+"px";
+});
 }
 
 function createHeart(){
@@ -212,10 +229,10 @@ heart.style.fontSize=(Math.random()*20+10)+"px";
 document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),6000);
 }
-setInterval(createHeart,500);
+setInterval(createHeart,400);
 
 function startFireworks(){
-for(let i=0;i<30;i++){
+for(let i=0;i<40;i++){
 var fw=document.createElement("div");
 fw.classList.add("firework");
 fw.style.left=Math.random()*100+"vw";
@@ -229,4 +246,3 @@ setTimeout(()=>fw.remove(),1000);
 
 </body>
 </html>
-
